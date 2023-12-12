@@ -20,3 +20,4 @@ export async function generateImages(input) {
         // 256, 512, 1024
         // response_format: "b64_json",
     })
+}
