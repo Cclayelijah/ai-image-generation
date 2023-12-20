@@ -10,6 +10,7 @@ import { ClipLoader } from "react-spinners";
 
 export default function Create() {
   const [pieces, setPieces] = useState([]);
+  const [selectedPieces, setSelectedPieces] = useState([]);
   const [selectedCount, setSelectedCount] = useState(0);
   const [generated, setGenerated] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,10 @@ export default function Create() {
 
   const appendPrompt = (word) => {
     promptText.current.value = promptText.current.value.concat(`, ${word}`)
+  }
+  const handleArtSelection = () => {
+    //save a list (array) of selected pieces(id) of art in variable name selectedPieces, 
+    //  - iterate through pieces and append all that have piece.selected = true
   }
 
   const handleGenerate = async (event) => {
@@ -170,7 +175,7 @@ export default function Create() {
                     <button
                       className="my-5 text-white btn btn-primary"
                       disabled={selectedCount > 0 ? false : true}
-                      onClick={() => {console.log('next')}}
+                      onClick={() => {handleArtSelection}}
                     >
                       Next
                     </button>
